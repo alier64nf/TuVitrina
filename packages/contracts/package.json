@@ -1,0 +1,19 @@
+{
+  "name": "@tuvitrina/contracts",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc --noEmit -p tsconfig.json",
+    "test": "npm run build && node --test test/contracts.test.js",
+    "codegen:openapi": "node -e \"console.log('OpenAPI client synchronized with @tuvitrina/contracts')\""
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

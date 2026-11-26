@@ -1,0 +1,27 @@
+{
+  "name": "tuvitrina-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.15.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "npm run build --workspace=@tuvitrina/contracts && npx prisma generate --schema=apps/api/prisma/schema.prisma",
+    "dev": "concurrently -k -n api,web -c cyan,green \"npm run dev --workspace=@tuvitrina/api\" \"npm run dev --workspace=@tuvitrina/web\"",
+    "build": "npm run build --workspace=@tuvitrina/contracts && npm run build --workspace=@tuvitrina/api && npm run build --workspace=@tuvitrina/web",
+    "start": "concurrently -k -n api,web -c cyan,green \"npm run start --workspace=@tuvitrina/api\" \"npm run start --workspace=@tuvitrina/web\"",
+    "lint": "npm run lint --workspace=@tuvitrina/contracts && npm run lint --workspace=@tuvitrina/api && npm run lint --workspace=@tuvitrina/web",
+    "test": "npm run test --workspace=@tuvitrina/contracts && npm run test --workspace=@tuvitrina/api",
+    "prisma:generate": "npx prisma generate --schema=apps/api/prisma/schema.prisma",
+    "prisma:migrate": "npx prisma migrate deploy --schema=apps/api/prisma/schema.prisma",
+    "openapi:generate": "npm run openapi:generate --workspace=@tuvitrina/api && npm run codegen:openapi --workspace=@tuvitrina/contracts"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.3"
+  }
+}
+

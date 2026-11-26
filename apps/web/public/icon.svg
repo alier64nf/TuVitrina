@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="TuVitrina">
+  <defs>
+    <linearGradient id="tvBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00796B" />
+      <stop offset="100%" stop-color="#004D40" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#tvBg)" />
+  <path d="M128 168 L156 112 H356 L384 168 Z" fill="#E0F2F1" />
+  <rect x="128" y="168" width="256" height="224" rx="28" fill="#FFFFFF" />
+  <path d="M128 168 C128 202 162 214 192 214 C222 214 256 202 256 168 C256 202 290 214 320 214 C350 214 384 202 384 168" fill="none" stroke="#00796B" stroke-width="18" stroke-linecap="round" />
+  <circle cx="204" cy="288" r="22" fill="#00796B" />
+  <circle cx="308" cy="288" r="22" fill="#00796B" />
+  <path d="M214 334 C236 356 276 356 298 334" fill="none" stroke="#D84315" stroke-width="18" stroke-linecap="round" />
+</svg>
