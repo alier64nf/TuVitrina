@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "tsx watch src/main.ts",
+    "dev": "tsc -p tsconfig.build.json && concurrently -k -n tsc,node \"tsc -p tsconfig.build.json --watch --preserveWatchOutput\" \"node --watch dist/main.js\"",
     "build": "npx prisma generate --schema=prisma/schema.prisma && tsc -p tsconfig.build.json",
     "start": "node dist/main.js",
     "lint": "tsc --noEmit -p tsconfig.json",
     "test": "jest --runInBand",
-    "openapi:generate": "tsx src/generate-openapi.ts"
+    "openapi:generate": "npm run build && node dist/generate-openapi.js"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.0",
